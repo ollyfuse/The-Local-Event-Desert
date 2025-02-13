@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden { display: none; }
+    </style>
     <title>Event Finder</title>
 </head>
 <body>
@@ -13,29 +16,31 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#event">Events</a></li>
-                <li><a href="#category">Categories</a></li>
+                <li><a href="#categories">Categories</a></li>
                 <li><a href="#explore">Explore</a></li>
             </ul>
         </nav>
         <div id="search-bar">
             <input type="text" placeholder="Search for events, concerts, or festivals..." />
-            <!-- <button type="submit">Search</button> -->
-          </div>
+        </div>
     </header>
-    <section id="category">
-        <div id="Categories-title"><h1>Event Categories...</h1></div>
-        <div id="cat-btn-links">
-            <ul class="cat-bttn">
-                <li><button class="toggle-summer-btn">Summer Vibes Concert</button></li>
-                <li><button class="toggle-Comedy-bttn">Comedy Night Live</button></li>
-                <li><button class="toggle-movie-btn">Movie Premiere Gala</button></li>
-                <li><button class="toggle-dance-bttn">Dance Battle Championship</button></li>
+    <section id="categories">
+        <div id="categories-btn-links">
+            <ul>
+                <li><button class="category-btn" data-content="category-summer">Summer Vibes</button></li>
+                <li><button class="category-btn" data-content="category-comedy">Comedy Night</button></li>
+                <li><button class="category-btn" data-content="category-movie">Movie Premiere</button></li>
+                <li><button class="category-btn" data-content="category-djs">DJs Battle</button></li>
             </ul>
         </div>
+        <div id="category-summer" class="category-content hidden"><p>Summer vibes content...</p><img src="image/summer.jpg" alt="summer" width="200px"></div>
+        <div id="category-comedy" class="category-content hidden"><p>Comedy night content...</p> <img src="image/comedy.png" alt="" width="200px"></div>
+        <div id="category-movie" class="category-content hidden"><p>Movie premiere content...</p> <img src="image/Movie.jpg" alt="" width="200px"></div>
+        <div id="category-djs" class="category-content hidden"><p>DJs battle content...</p> <img src="image/djs.png" alt="" width="200px"></div>
     </section>
     <main>
         <div id="upcoming-header"><h1>Upcoming Event!</h1></div>
-        <section class="upcoming-event-section">
+        <section id="explore">
             <article class="upcoming-event">
                 <img src="" alt="" class="upcoming-event-img">
                 <div class="upcoming-event-details">
@@ -70,5 +75,8 @@
             </article>
         </section>
     </main>
+<!-- script -->
+
+ <script src="script.js"></script>
 </body>
 </html>
