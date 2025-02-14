@@ -36,11 +36,12 @@
         <!-- category content section -->
         <div id="category-summer" class="category-content hidden">
             <article class="content-items">
-                <img src="image/summer.jpg" alt="summer" div="content-img">
+                <img src="image/summer.jpg" alt="summer" div="content-img" class="details-btn" >
                 <div class="content-items-details">
                     <h4>Move Afrika</h4>
                     <p>Summer vibes content...</p>
                     <span class="items-price">$20.00</span>
+                    <!-- <button class="details-btn" data-details="Summer vibes">View details</button> -->
                 </div>
             </article>
             <article class="content-items">
@@ -167,9 +168,22 @@
                 </div>
             </article>
         </section>
-    </main>
-<!-- script -->
+        <!-- for pop up thing -->
+         <div id="popup" class="popup hidden">
+            <h3 id="popup-title"></h3>
+            <p id="popup-details"></p>
+        </div>
+         <div id="overlay" class="overlay hidden"></div>
 
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="http://">About us</a>
+            <a href="http://">Contact</a>
+            <a href="http://">Terms of service</a>
+            <a href="http://">Privacy Policy</a>
+        </div>
+    </footer>
  <script src="script.js"></script>
 </body>
 </html>
