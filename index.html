@@ -15,13 +15,23 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#event">Events</a></li>
+                <li class="dropdown">
+                    <a href="#event" class="drp-btn">Events</a>
+                    <div class="dropdown-content">
+                        <a href="#">Music</a>
+                        <a href="#">Arts</a>
+                        <a href="#">Food</a>
+                        <a href="#">Technology</a>
+                        <a href="#">Sports</a>
+                        <a href="#">Community</a>
+                    </div>
+                </li>
                 <li><a href="#categories">Categories</a></li>
                 <li><a href="#explore">Explore</a></li>
             </ul>
         </nav>
         <div id="search-bar">
-            <input type="text" placeholder="Search for events, concerts, or festivals..." />
+            <input type="text" placeholder="Search for events, concerts, or festivals..."/><button class="search-btn">Search</button>
         </div>
     </header>
     <section id="categories">
@@ -38,7 +48,7 @@
             <article class="content-items">
                 <img src="image/summer.jpg" alt="summer" div="content-img" class="details-btn" >
                 <div class="content-items-details">
-                    <h4>Move Afrika</h4>
+                    <h4 data-set="name">Move Afrika</h4>
                     <p>Summer vibes content...</p>
                     <span class="items-price">$20.00</span>
                     <!-- <button class="details-btn" data-details="Summer vibes">View details</button> -->
@@ -170,18 +180,20 @@
         </section>
         <!-- for pop up thing -->
          <div id="popup" class="popup hidden">
+           <div id="popup-content">
             <h3 id="popup-title"></h3>
             <p id="popup-details"></p>
+           </div>
         </div>
          <div id="overlay" class="overlay hidden"></div>
 
     </main>
     <footer>
         <div class="footer-links">
-            <a href="http://">About us</a>
-            <a href="http://">Contact</a>
-            <a href="http://">Terms of service</a>
-            <a href="http://">Privacy Policy</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#">Terms of service</a>
+            <a href="#">Privacy Policy</a>
         </div>
     </footer>
  <script src="script.js"></script>
