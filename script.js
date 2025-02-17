@@ -1,9 +1,5 @@
-
-
 const popup = document.getElementById('popup');
 const overlay = document.getElementById('overlay');
-// const popupTitle = document.getElementById('popup-title');
-// const popupDetails = document.getElementById('popup-details');
 const popupContent = document.getElementById('popup-content');
 
 const buttons = document.querySelectorAll('.category-btn');
@@ -11,35 +7,39 @@ const allContents = document.querySelectorAll('.category-content');
 
 buttons.forEach(button => {
     button.addEventListener('click', function() {
-        // Hidding all category content
+        // Hiding all category content
         allContents.forEach(content => content.classList.add('hidden'));
-        // Getting data content form button clicked
-        const contentIdd = button.getAttribute('data-content');
-        // showing the selected content
-        const contentToShow = document.getElementById(contentIdd);
+        // Getting data content from button clicked
+        const contentId = button.getAttribute('data-content');
+        // Showing the selected content
+        const contentToShow = document.getElementById(contentId);
         contentToShow.classList.remove('hidden');
-    })
+    });
+});
 
-    // for popup
-    document.querySelectorAll('.details-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            // const name = btn.dataset.name;
-            // const date = btn.dataset.date;
-            // const venue = btn.dataset.venue;
-            // const cost = btn.dataset.venue;
+// Event delegation for popup
+document.body.addEventListener('click', (event) => {
+    if (event.target.classList.contains('details-btn')) {
+        const btn = event.target;
+        const eventName = btn.getAttribute('data-name');
+        const eventDate = btn.getAttribute('data-date');
+        const eventPrice = btn.getAttribute('data-price');
+        const eventLocation = btn.getAttribute('data-location');
+        
+        popupContent.innerHTML = `
+            <strong><h1>Event Details:</h1></strong>
+            <p><strong>Name:</strong> ${eventName}</p>
+            <p><strong>Date:</strong> ${eventDate}</p>
+            <p><strong>Price:</strong> ${eventPrice}</p>
+            <p><strong>Location:</strong> ${eventLocation}</p>
+        `;
+        popup.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+    }
+});
 
-            // popupTitle.textContent = name;
-            // popupDetails.innerHTML = 'Name: ${name} Date: ${date()}<br>Venue: ${venue}<br> Cost: ${cost}';
-
-            popup.textContent = `Details for ${btn.dataset.detail}`;
-            popupContent.innerHTML = `<strong>${btn.dataset.detail}</strong>: Detailed event information goes here.`;
-            popup.classList.remove('hidden');
-            overlay.classList.remove('hidden');
-        })
-    })
-    // for popup overlay
-    overlay.addEventListener('click', () => {
-        popup.classList.add('hidden');
-        overlay.classList.add('hidden');
-    })
-})
+// Close popup on overlay click
+overlay.addEventListener('click', () => {
+    popup.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
