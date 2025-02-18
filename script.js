@@ -28,10 +28,12 @@ document.body.addEventListener('click', (event) => {
         
         popupContent.innerHTML = `
             <strong><h1>Event Details:</h1></strong>
+            <div class="container-popup">
             <p><strong>Name:</strong> ${eventName}</p>
             <p><strong>Date:</strong> ${eventDate}</p>
             <p><strong>Price:</strong> ${eventPrice}</p>
             <p><strong>Location:</strong> ${eventLocation}</p>
+            </div>
         `;
         popup.classList.remove('hidden');
         overlay.classList.remove('hidden');
